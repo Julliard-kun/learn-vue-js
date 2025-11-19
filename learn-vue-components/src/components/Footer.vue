@@ -18,7 +18,7 @@ footer {
     padding-bottom:20px;
 }
 
-footer span{
+span{
     font-family: cursive;
 }
 </style>
