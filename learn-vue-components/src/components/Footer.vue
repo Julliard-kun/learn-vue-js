@@ -1,10 +1,14 @@
 <script setup>
+    import { ref } from 'vue';
 
+    const copyright = ref(new Date().getFullYear());
+    const href = ref('https://vuejs.org');
 </script>
 
 <template>
     <footer>
-        Created by <span>Professor Pickle</span> &copy; 2025
+        <!-- v-bind:href can be shortened to :href if the attribte has the same name as the variable-->
+        Created using <a :href="href">Vue.js</a> &copy; {{ copyright}}
     </footer>
 </template>
 
@@ -20,5 +24,10 @@ footer {
 
 span{
     font-family: cursive;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
 </style>

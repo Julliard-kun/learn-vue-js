@@ -1,14 +1,28 @@
 <script setup>
+    import { ref } from 'vue';
+
+    const quote = ref('First, solve the problem. Then, write the code.');
+    const author = ref('John Johnson');
+    const href = ref('https://www.google.com');
+    const isBtnDisabled = ref(true);
+
+    quote.value = 'Interpolation is the process of replacing variables with their values in a string.';
+    author.value = 'Professor Pickle';
 
 </script>
 
 <template>
     <main>
         <section>
-            <p>First, solve the problem. Then, write the code.</p>
-            <span>John Johnson</span>
+            <p>{{ quote }}</p>
+            <!-- v-bind:href can be shortened to :href if the attribte has the same name as the variable-->
+            <span><a :href>{{ author }}</a></span>
         </section>
-        <button>Another!</button>
+        <section id="buttons">
+            <!-- v-bind:something can be shortened to :something-->
+            <button :disabled="isBtnDisabled">Another!</button>
+            <button v-bind:disabled="isBtnDisabled">Share!</button>
+        </section>
     </main>
 </template>
 
@@ -56,20 +70,34 @@ span::before {
     content: "- "
 }
 
-button {
-    background: #406473;
-    color: white;
-    padding: 10px;
-    border: 0;
-    font-size: 1.2rem;
-    border-radius: 0 5px 0 5px;
-    font-weight: bold;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: transform 0.2s;
+span a {
+    color: #406473;
+    text-decoration: none;
 }
 
-button:hover {
-    transform: scale(1.05);
+#buttons {
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  button {
+      background:#406473;
+      color: white;
+      padding:10px;
+      border: 0;
+      font-size:1.2rem;
+      border-radius:0 5px 0 5px;
+      font-weight:bold;
+      margin-top:20px;
+      cursor:pointer;
+      transition: transform 0.2s;
+  }
+  button:hover{
+      transform: scale(1.05);
+  }
+  button:disabled {
+  background:grey;
+  cursor: not-allowed;
+  opacity:0.5;
 }
 </style>
