@@ -8,7 +8,7 @@
 <template>
     <footer>
         <!-- v-bind:href can be shortened to :href if the attribte has the same name as the variable-->
-        Created using <a :href="href">Vue.js</a> &copy; {{ copyright}}
+        Created using <a :href>Vue.js</a> &copy; {{ copyright}}
     </footer>
 </template>
 
