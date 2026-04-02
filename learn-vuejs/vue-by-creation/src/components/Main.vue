@@ -1,5 +1,14 @@
-<script setup>
+<script>
     import { ref } from 'vue';
+    export default {
+        name: 'App',
+        data() {
+            return {
+            name: 'John',
+            number: 10
+            }
+        }
+    };
 
     const quote = ref('First, solve the problem. Then, write the code.');
     const author = ref('John Johnson');
@@ -22,6 +31,16 @@
             <!-- v-bind:something can be shortened to :something-->
             <button :disabled="isBtnDisabled">Another!</button>
             <button v-bind:disabled="isBtnDisabled">Share!</button>
+        </section>
+
+        <!-- Interpolation -->
+        <section>
+            <h1>Hello {{ "world by interpolation" }}</h1>
+            <h1>Addition by interpolation: {{ 1 + 1 }}</h1>
+            <h1>Find string length by interpolation: Hello has {{ "Hello".length }} characters</h1>
+            <h1>Name by interpolation: {{ name }}</h1>
+            <h1>Number by interpolation: {{ number }}</h1>
+            <h1>Number by interpolation then replaced inside: {{ (number = 3) }}</h1>
         </section>
     </main>
 </template>

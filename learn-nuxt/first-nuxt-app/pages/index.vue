@@ -1,13 +1,14 @@
 <template>
     <div>
-        <h2>Login</h2>
-        <p>Welcome to the login page</p>
+        <h2>Welcome to the login page</h2>
         <NuxtLink to="/dashboard">Login</NuxtLink>
     </div>
 </template>
 
 <script setup>
-
+    definePageMeta({
+        layout: false,
+    })
 </script>
 
 <style scoped>
